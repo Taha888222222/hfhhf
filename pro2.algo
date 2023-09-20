@@ -1,0 +1,24 @@
+Algorithm dot_product(v1, v2: array of real): real
+    ps <- 0
+    for i from 1 to length(v1) do
+        ps <- ps + (v1[i] * v2[i])
+    return ps
+
+Algorithm AreVectorsOrthogonal(vectors: array of array of real): boolean
+    n <- length(vectors)
+    
+    for i from 1 to n do
+        for j from i+1 to n do
+            ps <- dot_product(vectors[i], vectors[j])
+            if ps <> 0 then
+                return False  // Not orthogonal
+        end for
+    end for
+    
+    return True  // All pairs are orthogonal
+
+
+
+
+
+

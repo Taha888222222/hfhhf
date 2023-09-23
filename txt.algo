@@ -1,0 +1,32 @@
+ALGORITHM algorithm_name
+    PROCEDURE dot _produit(v1,v2 : ARRAY_OF INTGER, VAR dot : INTGER)
+    VAR
+        i : INTGER;
+    BEGIN
+        dot :-0;
+        i:=0;
+        IF (v1.length <> v2.length) THEN
+            write("vectors with different sizes we cannot clcaulat dot produit");
+            dot := NaN;
+            END_IF
+            while (i<v1.length) DO 
+            dot := dot + v1 [i]*v2[i];
+            end_while
+    END 
+
+    ALGORITHM orth vectors
+    VAR
+        v1 v2 : ARRAY_OF INTGER [50];
+        dot : INTGER;
+    BEGIN
+        N1 := read_size();
+        read_array(n1,v1);
+        n2 := read_size();
+        read_array(n2,v2);
+        dot_product(v1,v2,dot);
+        IF (dot = 0 ) THEN
+            write("v1 and v2are orthogonal");
+            ELSE 
+            write("v1 and v2 are not orthonal");
+            END_IF
+    END
